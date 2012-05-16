@@ -12,10 +12,12 @@ Ti.include('/windows/nieuws_detail.js');
 			barImage : 'img/header.png'
 		}));
 		
-		var lblTitle = Titanium.UI.createLabel(Uit.combine(style.titleBar, {
-			text : Uit.tab2_name
-		}));
-		nieuwsWindow.setTitleControl(lblTitle);
+		if(Ti.Platform.osname==='iphone'){
+			var lblTitle = Titanium.UI.createLabel(Uit.combine(style.titleBar, {
+				text : Uit.tab2_name
+			}));
+			nieuwsWindow.setTitleControl(lblTitle);
+		}
 
 		// load the feed
 		nieuwsWindow.addEventListener('open', function(e) {

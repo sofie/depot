@@ -5,7 +5,7 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.014368 seconds on emulator to get ready
+[DEBUG] waited 0.013600 seconds on emulator to get ready
 [DEBUG] com.Depot installed? False
 [INFO] Copying CommonJS modules...
 [INFO] Copying project resources..
@@ -73,20 +73,10 @@ Logfile initialized
 [DEBUG] app stylesheet => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/gen/com/Depot/ApplicationStylesheet.java
 [DEBUG] copying app icon: /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/appicon.png
 [DEBUG] generating theme.xml
-[DEBUG] found drawable-long-land-hdpi splash screen at /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/images/res-long-land-hdpi/default.png
-[DEBUG] copying /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/images/res-long-land-hdpi/default.png splash screen to /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/res/drawable-long-land-hdpi/background.png
-[DEBUG] found drawable-long-land-ldpi splash screen at /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/images/res-long-land-ldpi/default.png
-[DEBUG] copying /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/images/res-long-land-ldpi/default.png splash screen to /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/res/drawable-long-land-ldpi/background.png
 [DEBUG] found drawable-long-port-hdpi splash screen at /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/images/res-long-port-hdpi/default.png
 [DEBUG] copying /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/images/res-long-port-hdpi/default.png splash screen to /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/res/drawable-long-port-hdpi/background.png
 [DEBUG] found drawable-long-port-ldpi splash screen at /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/images/res-long-port-ldpi/default.png
 [DEBUG] copying /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/images/res-long-port-ldpi/default.png splash screen to /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/res/drawable-long-port-ldpi/background.png
-[DEBUG] found drawable-notlong-land-hdpi splash screen at /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/images/res-notlong-land-hdpi/default.png
-[DEBUG] copying /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/images/res-notlong-land-hdpi/default.png splash screen to /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/res/drawable-notlong-land-hdpi/background.png
-[DEBUG] found drawable-notlong-land-ldpi splash screen at /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/images/res-notlong-land-ldpi/default.png
-[DEBUG] copying /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/images/res-notlong-land-ldpi/default.png splash screen to /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/res/drawable-notlong-land-ldpi/background.png
-[DEBUG] found drawable-notlong-land-mdpi splash screen at /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/images/res-notlong-land-mdpi/default.png
-[DEBUG] copying /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/images/res-notlong-land-mdpi/default.png splash screen to /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/res/drawable-notlong-land-mdpi/background.png
 [DEBUG] found drawable-notlong-port-hdpi splash screen at /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/images/res-notlong-port-hdpi/default.png
 [DEBUG] copying /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/images/res-notlong-port-hdpi/default.png splash screen to /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/res/drawable-notlong-port-hdpi/background.png
 [DEBUG] found drawable-notlong-port-ldpi splash screen at /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/images/res-notlong-port-ldpi/default.png
@@ -171,13 +161,8 @@ Logfile initialized
 [DEBUG] from resource zip => res/layout/titanium_tabgroup.xml
 [DEBUG] from resource zip => AndroidManifest.xml
 [DEBUG] from resource zip => resources.arsc
-[DEBUG] from resource zip => res/drawable-long-land-hdpi/background.png
-[DEBUG] from resource zip => res/drawable-long-land-ldpi/background.png
 [DEBUG] from resource zip => res/drawable-long-port-hdpi/background.png
 [DEBUG] from resource zip => res/drawable-long-port-ldpi/background.png
-[DEBUG] from resource zip => res/drawable-notlong-land-hdpi/background.png
-[DEBUG] from resource zip => res/drawable-notlong-land-ldpi/background.png
-[DEBUG] from resource zip => res/drawable-notlong-land-mdpi/background.png
 [DEBUG] from resource zip => res/drawable-notlong-port-hdpi/background.png
 [DEBUG] from resource zip => res/drawable-notlong-port-ldpi/background.png
 [DEBUG] from resource zip => res/drawable-notlong-port-mdpi/background.png
@@ -204,6 +189,6 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.014378 seconds on emulator to get ready
+[DEBUG] waited 0.014075 seconds on emulator to get ready
 [INFO] Installing application on device
 [INFO] Application installed. Launch from drawer on Home Screen

@@ -15,6 +15,81 @@ Ti.include(
 
 		var tabGroup = Titanium.UI.createTabGroup(style.tabGroup);
 		Titanium.App.tabgroup = tabGroup;
+		
+		var navWindow1;
+	    var mainWindow1= Uit.ui.createConcertenWindow();
+	    var navWindow2;
+	    var mainWindow2= Uit.ui.createNieuwsWindow();
+	    
+	    if (Ti.Platform.osname === 'android') {
+	    	navWindow1 = Ti.UI.createWindow({
+				navBarHidden : false,
+				tabBarHidden : false
+			});
+			Ti.App.navWin1 = navWindow1;
+			navWindow2 = Ti.UI.createWindow({
+				navBarHidden : false,
+				tabBarHidden : false
+			});
+			navGroup = {
+	            open: function (win, obj) {
+	                win.open(obj);
+	            },
+	            close: function (win, obj) {
+	                win.close(obj);
+	            }
+	        };
+	        navWindow1 = mainWindow1;
+	        navWindow2 = mainWindow2;
+	    } else {
+	    	//TAB 1
+	        navWindow1 = Ti.UI.createWindow({
+				navBarHidden : true,
+				tabBarHidden : true
+			});
+	        navTab1 = Ti.UI.iPhone.createNavigationGroup({
+	            window: mainWindow1
+	        });
+	        Titanium.App.navTab1 = navTab1;
+	        navWindow1.add(navTab1);
+	        
+	        //TAB 2
+	        navWindow2 = Ti.UI.createWindow({
+				navBarHidden : true,
+				tabBarHidden : true
+			});
+	        navTab2 = Ti.UI.iPhone.createNavigationGroup({
+	            window: mainWindow2
+	        });
+	        Titanium.App.navTab2 = navTab2;
+	        navWindow2.add(navTab2);
+	        
+	        
+	        //CUSTOM TAB
+			//Tutorial: Custom iPhone tabbar using Appcelerator Titanium
+			//http://www.samjordan.co.uk/2011/02/tutorial-custom-iphone-tabbar-using-appcelerator-titanium/
+			Ti.include("config/customTabBar.js");
+	
+			var myCustomTabBar = new CustomTabBar({
+				tabBar : tabGroup,
+				imagePath : '/img/customTabBar/',
+				width : 160,
+				height : 50,
+				items : [{
+					image : Uit.customTab1,
+					selected : Uit.customTab1_selected
+				}, {
+					image : Uit.customTab2,
+					selected : Uit.customTab2_selected
+				}]
+			});
+
+	    }
+   		
+	    if (Ti.Platform.osname !== 'android') {
+	        Ti.UI.orientation = Ti.UI.PORTRAIT;
+	    }
+	    /*
 
 		// EERSTE TAB
 		var mainWinTab1 = Uit.ui.createConcertenWindow();
@@ -41,15 +116,22 @@ Ti.include(
 			tabBarHidden : true
 		});
 		baseWinTab2.add(navTab2);
-
+		*/
+		
 		//TAB GROUP
 		var tab1 = Titanium.UI.createTab({
-			window : baseWinTab1
+			window : navWindow1,
+			title: Uit.tab1_name
 		});
-
+		navWindow1.containingTab = tab1;
+		Ti.App.tab1 = tab1;
+		
 		var tab2 = Titanium.UI.createTab({
-			window : baseWinTab2
+			window : navWindow2,
+			title: Uit.tab2_name
 		});
+		navWindow2.containingTab = tab2;
+		Ti.App.tab2 = tab2;
 
 		tabGroup.addTab(tab1);
 		tabGroup.addTab(tab2);
@@ -59,7 +141,7 @@ Ti.include(
 		//CUSTOM TAB
 		//Tutorial: Custom iPhone tabbar using Appcelerator Titanium
 		//http://www.samjordan.co.uk/2011/02/tutorial-custom-iphone-tabbar-using-appcelerator-titanium/
-		Ti.include("/config/customTabBar.js");
+		/*Ti.include("/config/customTabBar.js");
 
 		var myCustomTabBar = new CustomTabBar({
 			tabBar : tabGroup,
@@ -74,7 +156,7 @@ Ti.include(
 				selected : Uit.customTab2_selected
 			}]
 		});
-
+*/
 		return tabGroup;
 	}
 })();

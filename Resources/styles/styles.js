@@ -14,7 +14,7 @@
 		
 		Window: {
 			width : '100%',
-			backgroundImage : 'img/bg.png',
+			backgroundImage : '/img/bg.png',
 			tabBarHidden : true
 		},
 		scrollView: {
@@ -116,8 +116,8 @@
 			scrollable : true
 		},
 		tableViewRow :{
-			rightImage : 'img/arrow.png',
-			backgroundImage : 'img/bg.png',
+			rightImage : '/img/arrow.png',
+			backgroundImage : '/img/bg.png',
 			layout : 'vertical',
 			selectedBackgroundColor : '#B8DAE8',
 			backgroundSelectedColor: '#B8DAE8',
@@ -145,13 +145,13 @@
 			right : 0
 		},
 		starView1 : {
-			backgroundImage : "img/star.png",
+			backgroundImage : "/img/star.png",
 			width : 14,
 			height : 14,
 			left:110
 		},
 		starView2 : {
-			backgroundImage : "img/star.png",
+			backgroundImage : "/img/star.png",
 			width : 14,
 			height : 14,
 			left:200

@@ -16,10 +16,12 @@ Ti.include(
 			barImage : 'img/header.png'
 		}));
 		
-		var lblTitle = Titanium.UI.createLabel(Uit.combine(style.titleBar, {
-			text : Uit.tab1_name
-		}));
-		mainWin.setTitleControl(lblTitle);
+		if(Ti.Platform.osname==='iphone'){
+			var lblTitle = Titanium.UI.createLabel(Uit.combine(style.titleBar, {
+				text : Uit.tab1_name
+			}));
+			mainWin.setTitleControl(lblTitle);
+		}
 		
 		if(!Titanium.Network.online) {
 			var lblNoInternet = Ti.UI.createLabel(Uit.combine(style.textError, {
@@ -75,23 +77,15 @@ Ti.include(
 						
 						var row = Ti.UI.createTableViewRow(style.tableViewRow);
 						
-						//
-						//Als retina display grote thumbnails
-						//
-						/*if (Ti.Platform.displayCaps.density === 'high') {
-						     var imgThumb = strImg + '?width=180&height=180&crop=auto';
-						}else{
-							imgThumb = strImg + '?width=90&height=90&crop=auto';
-						};*/
-						 var imgThumb = strImg + '?width=90&height=90&crop=auto';
+						var imgThumb = strImg + '?width=90&height=90&crop=auto';
 						if(cdbImg === '') {
-							imgThumb = 'img/no_thumb.jpg';
+							imgThumb = '/img/no_thumb.jpg';
 						}
 
 						var image = Titanium.UI.createImageView(Uit.combine(style.Img90,{
 							//backgroundImage : imgThumb,
 							image:imgThumb,
-							defaultImage:'img/default_img.png'
+							defaultImage:'/img/default_img.png'
 						}));
 
 						var name = Ti.UI.createLabel(Uit.combine(style.titleNaam,{
