@@ -13,7 +13,9 @@ Ti.include(
 
 	Uit.ui.createApplicationMainWin = function() {
 
-		var tabGroup = Titanium.UI.createTabGroup(style.tabGroup);
+		var tabGroup = Titanium.UI.createTabGroup(Uit.combine(style.tabGroup,{
+			barColor:'#D64027'
+		}));
 		Titanium.App.tabgroup = tabGroup;
 		
 		var navWindow1;
@@ -23,13 +25,13 @@ Ti.include(
 	    
 	    if (Ti.Platform.osname === 'android') {
 	    	navWindow1 = Ti.UI.createWindow({
-				navBarHidden : false,
-				tabBarHidden : false
+				navBarHidden : true,
+				tabBarHidden : true
 			});
 			Ti.App.navWin1 = navWindow1;
 			navWindow2 = Ti.UI.createWindow({
-				navBarHidden : false,
-				tabBarHidden : false
+				navBarHidden : true,
+				tabBarHidden : true
 			});
 			navGroup = {
 	            open: function (win, obj) {
@@ -41,6 +43,22 @@ Ti.include(
 	        };
 	        navWindow1 = mainWindow1;
 	        navWindow2 = mainWindow2;
+	        
+	        Ti.include("/config/customTabBarAndroid.js");
+	
+			var myCustomTabBar = new CustomTabBar({
+				tabBar : tabGroup,
+				imagePath : '/img/customTabBar/',
+				width : 160,
+				height : 50,
+				items : [{
+					image : Uit.customTab1,
+					selected : Uit.customTab1_selected
+				}, {
+					image : Uit.customTab2,
+					selected : Uit.customTab2_selected
+				}]
+			});
 	    } else {
 	    	//TAB 1
 	        navWindow1 = Ti.UI.createWindow({
@@ -128,7 +146,9 @@ Ti.include(
 		
 		var tab2 = Titanium.UI.createTab({
 			window : navWindow2,
-			title: Uit.tab2_name
+			title: Uit.tab2_name,
+			backgroundColor:'#D64027',
+			barColor:'#D64027'
 		});
 		navWindow2.containingTab = tab2;
 		Ti.App.tab2 = tab2;

@@ -6,33 +6,53 @@
 	Uit.ui.createConcertDetailWindow = function() {
 
 		var detailWin = Titanium.UI.createWindow(Uit.combine(style.Window, {
-			barImage : 'img/header_detail.png'
-		}));
-		
-		// LEFT NAVBAR BACK BUTTON
-		var backButton = Ti.UI.createButton(style.backButton);
-		backButton.addEventListener('click', function() {
-			Ti.App.fireEvent('app:reloadSearch', {
-				action : 'Reload search'
-			});
-			
-			Titanium.App.navTab1.close(detailWin, {
-				animated : false
-			});
-		});
-		detailWin.leftNavButton = backButton;
+			barImage : 'img/header_detail.png',
 
-		detailWin.addEventListener('blur', function(e) {
-			Titanium.App.navTab1.close(detailWin, {
-				animated : false
+		}));
+
+		if(Ti.Platform.osname === 'android') {
+			detailWin.title = 'Concerten';
+			detailWin.barColor = '#D64027';
+		}
+
+		// LEFT NAVBAR BACK BUTTON
+		if(Ti.Platform.osname !== 'android') {
+			var backButton = Ti.UI.createButton(style.backButton);
+			backButton.addEventListener('click', function() {
+				Ti.App.fireEvent('app:reloadSearch', {
+					action : 'Reload search'
+				});
+
+				Titanium.App.navTab1.close(detailWin, {
+					animated : false
+				});
 			});
-		});
-		var navActInd = Titanium.UI.createActivityIndicator();
+			detailWin.leftNavButton = backButton;
+
+			detailWin.addEventListener('blur', function(e) {
+				Titanium.App.navTab1.close(detailWin, {
+					animated : false
+				});
+			});
+		}
+		if(Ti.Platform.osname === 'android') {
+			var navActInd = Titanium.UI.createActivityIndicator({
+				style : Ti.UI.iPhone.ActivityIndicatorStyle.DARK,
+				message : ' Loading...'
+			});
+			detailWin.add(navActInd);
+		} else {
+			var navActInd = Titanium.UI.createActivityIndicator();
+			detailWin.setRightNavButton(navActInd);
+		}
 
 		detailWin.addEventListener('open', function(e) {
 			getData();
 
-			detailWin.setRightNavButton(navActInd);
+			if(Ti.Platform.osname === 'iphone') {
+				
+			}
+
 			navActInd.show();
 		});
 		//HTTP CLIENT GETDATA
@@ -51,7 +71,7 @@
 					if(cdbDatum === undefined) {
 						cdbDatum = detail.event.calendar.timestamps.timestamp.date;
 						cdbStart = detail.event.calendar.timestamps.timestamp.timestart;
-					}else{
+					} else {
 						cdbDatum = detail.event.calendar.timestamps.timestamp[0].date;
 						cdbStart = detail.event.calendar.timestamps.timestamp[0].timestart;
 					}
@@ -65,7 +85,12 @@
 					var cdbPrijs = detail.event.eventdetails.eventdetail.price;
 					var cdbDescription = detail.event.eventdetails.eventdetail.longdescription;
 
-					var scrollView = Titanium.UI.createScrollView(style.scrollView);
+					var scrollView;
+					if(Ti.Platform.osname === 'iphone') {
+						scrollView = Titanium.UI.createScrollView(style.scrollView);
+					} else {
+						scrollView = Titanium.UI.createScrollView(style.scrollViewAndroid);
+					}
 
 					//Als geen foto is, foto weglaten
 					if(cdbImg !== undefined) {
@@ -77,7 +102,7 @@
 					var image = Ti.UI.createImageView(Uit.combine(style.Img320, {
 						image : cdbImg,
 						//backgroundImage : cdbImg,
-						defaultImage:'img/default_detail_img.png'
+						defaultImage : 'img/default_detail_img.png'
 					}));
 					scrollView.add(image);
 
@@ -88,8 +113,7 @@
 					}));
 
 					var viewHorizontal = Titanium.UI.createView(style.horizontalView);
-					
-					
+
 					var date = Ti.UI.createLabel(Uit.combine(style.textLubalin, {
 						text : prettyDate
 					}));
@@ -117,49 +141,68 @@
 						viewHorizontal.add(star2);
 						viewHorizontal.add(price);
 					};
-					
+
 					//Als er geen longdescription is, shortdescription laten zien
 					if(cdbDescription === undefined) {
 						cdbDescription = detail.event.eventdetails.eventdetail.shortdescription;
 					};
 					cdbDescription = cdbDescription.replace(/<br \/>/gi, " ");
-					
-					var description = Ti.UI.createLabel(Uit.combine(style.textDescriptionDetail, {
-						text : cdbDescription
-					}));
-					
-					var ticketsLink = Titanium.UI.createView(style.ticketsLink);
-					
-					ticketsLink.addEventListener('click', function(e) {
-						windowLink.open({
-							modal : true,
-							modalTransitionStyle : Ti.UI.iPhone.MODAL_TRANSITION_STYLE_COVER_VERTICAL,
-							modalStyle : Ti.UI.iPhone.MODAL_PRESENTATION_CURRENT_CONTEXT,
-						});
-					});
+
+					var description;
+					if(Ti.Platform.osname === 'android') {
+						var description = Ti.UI.createLabel(Uit.combine(style.textDescriptionDetail, {
+							text : cdbDescription,
+							font : {
+								fontSize : 13,
+								fontFamily : 'Verdana'
+							}
+						}));
+					} else {
+						var description = Ti.UI.createLabel(Uit.combine(style.textDescriptionDetail, {
+							text : cdbDescription
+						}));
+					}
 					//
 					//Webview window
 					//
-					var webview = Titanium.UI.createWebView({
-						url : Uit.app_site
+					
+					var ticketsLink = Titanium.UI.createView(style.ticketsLink);
+					ticketsLink.addEventListener('click', function(e) {
+						if(Ti.Platform.osname === 'android') {
+							var webview = Titanium.UI.createWebView({
+								url : Uit.app_site
+							});
+		
+							var windowLink = Titanium.UI.createWindow(Uit.combine(style.Window, {
+								barImage : 'img/header_tickets.png'
+							}));
+		
+							if(Ti.Platform.osname === 'android') {
+								windowLink.title = 'Bestel tickets';
+							}
+		
+							windowLink.add(webview);
+							
+							windowLink.open({
+								modal : false
+							});
+							var navActInd = Titanium.UI.createActivityIndicator({
+								style : Ti.UI.iPhone.ActivityIndicatorStyle.DARK,
+								message : ' Loading...'
+							});
+							windowLink.add(navActInd);
+							webview.addEventListener('beforeload',function(e){
+								navActInd.show();
+							});
+							webview.addEventListener('load',function(e){
+								navActInd.hide();
+							});
+						} else {
+							Titanium.App.navTab1.open(Uit.ui.createTicketsWindow(), {
+								animated : false
+							});
+						}
 					});
-
-					var windowLink = Titanium.UI.createWindow(Uit.combine(style.Window, {
-						barImage : 'img/header_tickets.png'
-					}));
-
-					var backBtnLinkWindow = Titanium.UI.createButton(style.downButton);
-					backBtnLinkWindow.addEventListener('click', function() {
-						windowLink.close({
-							animated : false
-						});
-						Titanium.App.navTab1.open(Uit.ui.createConcertDetailWindow(), {
-							animated : false
-						});
-					});
-					windowLink.leftNavButton = backBtnLinkWindow;
-
-					windowLink.add(webview);
 
 					//Footer
 					var footer = Titanium.UI.createView(style.footerView);
@@ -168,12 +211,12 @@
 						text : '© ' + Uit.app_name,
 						left : 10
 					}));
-					
+
 					var tel = Titanium.UI.createLabel(Uit.combine(style.textFooter, {
 						text : 'T: ' + Uit.app_tel,
 						left : 100
 					}));
-		
+
 					tel.addEventListener('click', function() {
 						Ti.API.info(tel.text);
 						Titanium.Platform.openURL('tel:' + Uit.app_tel)
@@ -186,8 +229,8 @@
 						Ti.API.info(mail.text);
 						//Titanium.Platform.openURL('mailto:' + Uit.app_mail);
 						var emailDialog = Ti.UI.createEmailDialog();
-			            emailDialog.toRecipients = [Uit.app_mail];
-			            emailDialog.open();
+						emailDialog.toRecipients = [Uit.app_mail];
+						emailDialog.open();
 					});
 					footer.add(organiser);
 					footer.add(tel);

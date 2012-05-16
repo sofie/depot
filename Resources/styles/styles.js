@@ -15,7 +15,8 @@
 		Window: {
 			width : '100%',
 			backgroundImage : '/img/bg.png',
-			tabBarHidden : true
+			tabBarHidden : true,
+			barColor:'#D64027'
 		},
 		scrollView: {
 			contentWidth : 'auto',
@@ -26,8 +27,18 @@
 			bottom : 10,
 			verticalBounce:true
 		},
+		scrollViewAndroid: {
+			contentWidth : 'auto',
+			contentHeight : 'auto',
+			showVerticalScrollIndicator : true,
+			layout : 'vertical',
+			top : 0,
+			bottom : 0,
+			verticalBounce:true
+		},
 		tabGroup:{
-			backgroundColor : '#fff'
+			backgroundColor : '#fff',
+			barColor:'#D64027'
 		},
 		
 		//
@@ -104,7 +115,14 @@
 			top : 0,
 			left : 0,
 			right : 0,
-			bottom : 40,
+			bottom : 50,
+			backgroundImage : '/img/bg.png'
+		},
+		TableViewAndroid: {
+			top : 0,
+			left : 0,
+			right : 0,
+			bottom : 0,
 			backgroundImage : '/img/bg.png'
 		},
 		TableViewSearch: {
@@ -170,6 +188,12 @@
 			top : 0,
 			bottom : 40
 		},
+		webViewFeedAndroid:{
+			width : 440,
+			left : 0,
+			top : 0,
+			bottom : 0
+		},
 		ticketsLink:{
 			backgroundImage:'/img/bg_tickets.png',
 			width:80,
@@ -198,8 +222,8 @@
 		titleNaam: {
 			left : 100,
 			top : -90,
+			color:'#000',
 			width : 'auto',
-			height : 'auto',
 			textAlign : 'left',
 			font : {
 				fontFamily : 'Impact', fontSize:18
@@ -234,7 +258,18 @@
 			top : 0,
 			left : 100,
 			width : 200,
-			height : 36,
+			height : 33,
+			color:'#000',
+			textAlign : 'left',
+			font : {fontSize : 11, fontFamily : 'Verdana'}
+		},
+		textDescriptionAndroid:{
+			top : 0,
+			left : 100,
+			width : 200,
+			height:40,
+			bottom : 15,
+			color:'#000',
 			textAlign : 'left',
 			font : {fontSize : 11, fontFamily : 'Verdana'}
 		},
@@ -243,6 +278,7 @@
 			left : 30,
 			right : 30,
 			bottom : 10,
+			color:'#000',
 			textAlign : 'left',
 			height:'auto',
 			font : {fontSize : 11, fontFamily : 'Verdana'}
@@ -281,14 +317,15 @@
 			font : {
 				fontFamily : 'Impact', 
 				fontSize:18
-			}
+			},
+			color : '#000'
 		},
 		textFeed:{
 			color : '#000',
 			textAlign : 'left',
 			top : 5,
 			left : 20,
-			height : 50,
+			height : 54,
 			width : 270,
 			font : {fontSize : 11, fontFamily : 'Verdana'}
 		},

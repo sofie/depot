@@ -2,10 +2,7 @@
  * Eerste tab, alle concerten in tableview
  */
 
-Ti.include(
-	'/windows/concert_detail.js',
-	'/windows/zoeken.js'
-);
+Ti.include('/windows/concert_detail.js', '/windows/tickets.js', '/windows/zoeken.js');
 
 (function() {
 	Uit.ui.createConcertenWindow = function() {
@@ -13,26 +10,37 @@ Ti.include(
 		Titanium.App.tabgroup.setActiveTab(Titanium.App.navTab1);
 
 		var mainWin = Titanium.UI.createWindow(Uit.combine(style.Window, {
-			barImage : 'img/header.png'
+			barImage : '/img/header.png'
 		}));
-		
-		if(Ti.Platform.osname==='iphone'){
+
+		if(Ti.Platform.osname === 'iphone') {
 			var lblTitle = Titanium.UI.createLabel(Uit.combine(style.titleBar, {
 				text : Uit.tab1_name
 			}));
 			mainWin.setTitleControl(lblTitle);
 		}
-		
+
 		if(!Titanium.Network.online) {
 			var lblNoInternet = Ti.UI.createLabel(Uit.combine(style.textError, {
 				text : 'Kan geen connectie maken met internet. Refresh of controleer uw verbinding.',
-				left:20,
-				right:20
+				left : 20,
+				right : 20
 			}));
 			mainWin.add(lblNoInternet);
 		} else {
+			if(Ti.Platform.osname === 'android') {
+				var navActInd = Titanium.UI.createActivityIndicator({
+					message : ' Loading...'
+				});
+				mainWin.add(navActInd);
+			} else {
+				var navActInd = Titanium.UI.createActivityIndicator();
+				mainWin.setRightNavButton(navActInd);	
+			}
+			
+			navActInd.show();
 			var url = 'http://build.uitdatabank.be/api/events/search?format=json&key=' + Uit.api_key + '&organiser=' + Uit.organizer;
-			getData();	
+			getData();
 		}
 
 		// RIGHT NAVBAR: REFRESH BUTTON
@@ -60,7 +68,7 @@ Ti.include(
 			var data = [];
 
 			var getReq = Titanium.Network.createHTTPClient();
-	
+
 			getReq.onload = function() {
 				try {
 					mainWin.leftNavButton = searchButton;
@@ -74,27 +82,34 @@ Ti.include(
 
 						var cdbImg = list[i].thumbnail;
 						var strImg = cdbImg.substr(0, 77);
-						
+
 						var row = Ti.UI.createTableViewRow(style.tableViewRow);
-						
+
 						var imgThumb = strImg + '?width=90&height=90&crop=auto';
 						if(cdbImg === '') {
 							imgThumb = '/img/no_thumb.jpg';
 						}
 
-						var image = Titanium.UI.createImageView(Uit.combine(style.Img90,{
+						var image = Titanium.UI.createImageView(Uit.combine(style.Img90, {
 							//backgroundImage : imgThumb,
-							image:imgThumb,
-							defaultImage:'/img/default_img.png'
+							image : imgThumb,
+							defaultImage : '/img/default_img.png'
 						}));
 
-						var name = Ti.UI.createLabel(Uit.combine(style.titleNaam,{
+						var name = Ti.UI.createLabel(Uit.combine(style.titleNaam, {
 							text : cdbNaam
 						}));
-						
-						var descr = Ti.UI.createLabel(Uit.combine(style.textDescription,{
-							text : cdbDescription
-						}));
+
+						var descr;
+						if(Ti.Platform.osname === 'android') {
+							descr = Ti.UI.createLabel(Uit.combine(style.textDescriptionAndroid, {
+								text : cdbDescription
+							}));
+						} else {
+							descr = Ti.UI.createLabel(Uit.combine(style.textDescription, {
+								text : cdbDescription
+							}));
+						}
 
 						row.add(image);
 						row.add(name);
@@ -103,9 +118,16 @@ Ti.include(
 						data.push(row);
 					};
 
-					var tableView = Titanium.UI.createTableView(Uit.combine(style.TableView,{
-						data : data
-					}));
+					var tableView;
+					if(Ti.Platform.osname === 'android') {
+						tableView = Titanium.UI.createTableView(Uit.combine(style.TableView, {
+							data : data
+						}));
+					} else {
+						tableView = Titanium.UI.createTableView(Uit.combine(style.TableView, {
+							data : data
+						}));
+					}
 					mainWin.add(tableView);
 
 					//Open detail window
@@ -114,12 +136,17 @@ Ti.include(
 						Ti.API.info(Titanium.App.selectedIndex);
 						Titanium.App.rowIndex = e.index;
 
-						Titanium.App.navTab1.open(Uit.ui.createConcertDetailWindow(), {
-							animated : false
-						});
-					});
-					
+						if(Ti.Platform.osname === 'android') {
+							mainWin.containingTab.open(Uit.ui.createConcertDetailWindow());
+						} else {
+							Titanium.App.navTab1.open(Uit.ui.createConcertDetailWindow(), {
+								animated : false
+							});
+						}
 
+					});
+
+					navActInd.hide();
 					Uit.ui.activityIndicator.hideModal();
 
 				} catch(e) {
@@ -130,6 +157,15 @@ Ti.include(
 			getReq.open("GET", url);
 			getReq.send();
 		};
+		if(Ti.Platform.osname === 'android') {
+			var bottomBar = Ti.UI.createView({
+				bottom : 0,
+				height : 40,
+				width : 320,
+				backgroundColor : '#D64027'
+			})
+			//mainWin.add(bottomBar);
+		}
 
 		return mainWin;
 	};

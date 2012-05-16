@@ -3,34 +3,37 @@
  */
 
 (function() {
-	Uit.ui.createNieuwsDetailWindow = function() {
+	Uit.ui.createTicketsWindow = function() {
 
-		var detailWin = Titanium.UI.createWindow(Uit.combine(style.Window, {
-			barImage : 'img/header_nieuws.png'
+		var ticketsWin = Titanium.UI.createWindow(Uit.combine(style.Window, {
+			barImage : '/img/header_tickets.png'
 		}));
 		if(Ti.Platform.osname === 'android') {
-			detailWin.title = 'Nieuws';
-			detailWin.barColor = '#D64027';
+			ticketsWin.title = 'Bestel tickets';
+			ticketsWin.barColor = '#D64027';
 		}
 
 		if(Ti.Platform.osname !== 'android') {
 			// LEFT NAVBAR BACK BUTTON
 			var backButton = Titanium.UI.createButton(style.backButton);
 			backButton.addEventListener('click', function() {
-				Titanium.App.navTab2.close(detailWin, {
+				Titanium.App.navTab1.close(ticketsWin, {
+					animated : false
+				});
+				Titanium.App.navTab1.open(Uit.ui.createConcertDetailWindow(), {
 					animated : false
 				});
 			});
 
-			detailWin.leftNavButton = backButton;
+			ticketsWin.leftNavButton = backButton;
 
-			detailWin.addEventListener('blur', function(e) {
-				Titanium.App.navTab2.close(detailWin, {
+			ticketsWin.addEventListener('blur', function(e) {
+				Titanium.App.navTab2.close(ticketsWin, {
 					animated : false
 				});
 			});
-			detailWin.addEventListener('close', function(e) {
-				Titanium.App.navTab2.close(detailWin, {
+			ticketsWin.addEventListener('close', function(e) {
+				Titanium.App.navTab2.close(ticketsWin, {
 					animated : false
 				});
 			});
@@ -39,24 +42,25 @@
 			var navActInd = Titanium.UI.createActivityIndicator({
 				message : ' Loading...'
 			});
-			detailWin.add(navActInd);
+			ticketsWin.add(navActInd);
+			
 		} else {
 			var navActInd = Titanium.UI.createActivityIndicator();
-			detailWin.setRightNavButton(navActInd);
+			ticketsWin.setRightNavButton(navActInd);
 		}
 
-		detailWin.addEventListener('open', function(e) {
+		ticketsWin.addEventListener('open', function(e) {
 			navActInd.show();
 		});
 
 		var webview;
 		if(Ti.Platform.osname === 'iphone') {
 			webview = Titanium.UI.createWebView(Uit.combine(style.webViewFeed, {
-				url : Titanium.App.selectedItemNieuws
+				url : Uit.app_site
 			}));
 		} else {
 			webview = Titanium.UI.createWebView(Uit.combine(style.webViewFeedAndroid, {
-				url : Titanium.App.selectedItemNieuws
+				url : Uit.app_site
 			}));
 		}
 
@@ -64,8 +68,8 @@
 			navActInd.hide();
 		});
 
-		detailWin.add(webview);
+		ticketsWin.add(webview);
 
-		return detailWin;
+		return ticketsWin;
 	};
 })();

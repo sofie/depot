@@ -5,72 +5,13 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.013600 seconds on emulator to get ready
+[DEBUG] waited 0.013761 seconds on emulator to get ready
 [DEBUG] com.Depot installed? False
 [INFO] Copying CommonJS modules...
 [INFO] Copying project resources..
-[INFO] Detected change in tiapp.xml, or assets deleted. Forcing full re-build...
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/appicon.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/appicon.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/default.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/default.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/app.js => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/app.js
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/config/activityIndicator.js => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/config/activityIndicator.js
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/config/config.js => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/config/config.js
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/config/customTabBar.js => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/config/customTabBar.js
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/config/strip_tags.js => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/config/strip_tags.js
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/fonts/Impact.ttf => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/fonts/Impact.ttf
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/fonts/itc-lubalin-graph-lt-demi.ttf => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/fonts/itc-lubalin-graph-lt-demi.ttf
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/arrow.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/arrow.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/arrow@2x.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/arrow@2x.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/bg.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/bg.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/bg_search.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/bg_search.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/bg_search@2x.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/bg_search@2x.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/bg_tickets.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/bg_tickets.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/bg_tickets@2x.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/bg_tickets@2x.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/btn_back.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/btn_back.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/btn_back@2x.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/btn_back@2x.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/btn_down.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/btn_down.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/btn_down@2x.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/btn_down@2x.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/btn_refresh.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/btn_refresh.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/btn_refresh@2x.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/btn_refresh@2x.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/btn_search.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/btn_search.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/btn_search@2x.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/btn_search@2x.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/customTabBar/btn_concerten.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/customTabBar/btn_concerten.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/customTabBar/btn_concerten@2x.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/customTabBar/btn_concerten@2x.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/customTabBar/btn_concerten_selected.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/customTabBar/btn_concerten_selected.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/customTabBar/btn_concerten_selected@2x.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/customTabBar/btn_concerten_selected@2x.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/customTabBar/btn_nieuws.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/customTabBar/btn_nieuws.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/customTabBar/btn_nieuws@2x.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/customTabBar/btn_nieuws@2x.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/customTabBar/btn_nieuws_selected.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/customTabBar/btn_nieuws_selected.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/customTabBar/btn_nieuws_selected@2x.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/customTabBar/btn_nieuws_selected@2x.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/customTabBar/clear.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/customTabBar/clear.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/default_detail_img.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/default_detail_img.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/default_img.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/default_img.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/header.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/header.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/header@2x.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/header@2x.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/header_detail.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/header_detail.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/header_detail@2x.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/header_detail@2x.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/header_nieuws.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/header_nieuws.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/header_nieuws@2x.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/header_nieuws@2x.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/header_tickets.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/header_tickets.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/header_tickets@2x.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/header_tickets@2x.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/header_zoeken.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/header_zoeken.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/header_zoeken@2x.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/header_zoeken@2x.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/no_img.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/no_img.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/no_thumb.jpg => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/no_thumb.jpg
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/star.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/star.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/star@2x.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/star@2x.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/test.jpeg => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/test.jpeg
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/img/toolbar.png => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/img/toolbar.png
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/styles/styles.js => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/styles/styles.js
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/windows/concert_detail.js => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/windows/concert_detail.js
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/windows/concerten.js => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/windows/concerten.js
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/windows/main.js => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/windows/main.js
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/windows/nieuws.js => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/windows/nieuws.js
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/windows/nieuws_detail.js => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/windows/nieuws_detail.js
-[TRACE] COPYING CREATED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/windows/zoeken.js => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/windows/zoeken.js
+[TRACE] COPYING MODIFIED FILE: /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/windows/concert_detail.js => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/windows/concert_detail.js
 [TRACE] Generating Java Classes
 [DEBUG] Processing Android resource drawables
-[DEBUG] app stylesheet => /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/gen/com/Depot/ApplicationStylesheet.java
 [DEBUG] copying app icon: /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/appicon.png
 [DEBUG] generating theme.xml
 [DEBUG] found drawable-long-port-hdpi splash screen at /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/images/res-long-port-hdpi/default.png
@@ -85,18 +26,18 @@ Logfile initialized
 [DEBUG] copying /Users/sofie/Documents/Titanium Studio Workspace/Depot/Resources/android/images/res-notlong-port-mdpi/default.png splash screen to /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/res/drawable-notlong-port-mdpi/background.png
 [DEBUG] found splash screen at /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/assets/Resources/default.png
 [TRACE] Writing out AndroidManifest.xml
-[DEBUG] adding /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/gen/com/Depot/ApplicationStylesheet.java to javac build list
 [DEBUG] adding /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/gen/com/Depot/DepotActivity.java to javac build list
 [DEBUG] adding /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/gen/com/Depot/DepotAppInfo.java to javac build list
 [DEBUG] adding /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/gen/com/Depot/DepotApplication.java to javac build list
 [DEBUG] adding /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/gen/com/Depot/R.java to javac build list
-[DEBUG] Building Java Sources: "/Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/gen/com/Depot/ApplicationStylesheet.java" "/Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/gen/com/Depot/DepotActivity.java" "/Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/gen/com/Depot/DepotAppInfo.java" "/Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/gen/com/Depot/DepotApplication.java" "/Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/gen/com/Depot/R.java"
+[DEBUG] Building Java Sources: "/Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/gen/com/Depot/DepotActivity.java" "/Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/gen/com/Depot/DepotAppInfo.java" "/Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/gen/com/Depot/DepotApplication.java" "/Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/gen/com/Depot/R.java"
 [INFO] Compiling Android Resources... This could take some time
 [DEBUG] Android classes.dex built
 [DEBUG] creating unsigned apk: /Users/sofie/Documents/Titanium Studio Workspace/Depot/build/android/bin/app-unsigned.apk
 [DEBUG] from resource zip => assets/Resources/config/activityIndicator.js
 [DEBUG] from resource zip => assets/Resources/config/config.js
 [DEBUG] from resource zip => assets/Resources/config/customTabBar.js
+[DEBUG] from resource zip => assets/Resources/config/customTabBarAndroid.js
 [DEBUG] from resource zip => assets/Resources/config/strip_tags.js
 [DEBUG] from resource zip => assets/Resources/fonts/Impact.ttf
 [DEBUG] from resource zip => assets/Resources/fonts/itc-lubalin-graph-lt-demi.ttf
@@ -148,6 +89,7 @@ Logfile initialized
 [DEBUG] from resource zip => assets/Resources/windows/main.js
 [DEBUG] from resource zip => assets/Resources/windows/nieuws.js
 [DEBUG] from resource zip => assets/Resources/windows/nieuws_detail.js
+[DEBUG] from resource zip => assets/Resources/windows/tickets.js
 [DEBUG] from resource zip => assets/Resources/windows/zoeken.js
 [DEBUG] from resource zip => assets/Resources/app.js
 [DEBUG] from resource zip => assets/Resources/appicon.png
@@ -189,6 +131,6 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.014075 seconds on emulator to get ready
+[DEBUG] waited 0.013867 seconds on emulator to get ready
 [INFO] Installing application on device
 [INFO] Application installed. Launch from drawer on Home Screen
