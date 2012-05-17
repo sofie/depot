@@ -33,6 +33,25 @@ Ti.include('/windows/nieuws_detail.js');
 			loadRSSFeed(url);
 		});
 		nieuwsWindow.rightNavButton = refreshButton;
+		var navActInd = Titanium.UI.createActivityIndicator({
+			message:' Loading...'
+		});
+		if(Ti.Platform.osname==='android'){
+			nieuwsWindow.activity.onCreateOptionsMenu = function(e) {
+		        var menu = e.menu;
+				var menuItem1 = menu.add({ 
+					title: "Refresh" 
+				});
+				menuItem1.setIcon("/img/btn_refresh_android.png");
+				menuItem1.addEventListener("click", function(e) { 
+					nieuwsWindow.add(navActInd);				
+					navActInd.show();
+					i = 0;
+					url = Uit.url_news_feed;
+					loadRSSFeed(url);
+				});
+	    	};
+	    }
 
 		if(!Titanium.Network.online) {
 			var lblNoInternet = Ti.UI.createLabel(Uit.combine(style.textError, {
@@ -77,10 +96,12 @@ Ti.include('/windows/nieuws_detail.js');
 				desc = desc.replace(/\n/gi, " ");
 				desc = desc.replace(/<br \/>/gi, "");
 				desc = desc.replace(/&amp;/gi, "&");
-				desc = desc.replace(/&nbsp;/gi, " ");
+				desc = desc.replace(/&nbsp;/gi, "");
 				desc = desc.replace(/&eacute;/gi, "é");
 				desc = desc.replace(/&egrave;/gi, "è");
 				desc = desc.replace(/&euml;/gi, "ë");
+				desc = desc.replace(/&uuml;/gi, "ü");
+				desc = desc.replace(/&ouml;/gi, "ö");
 
 				// Create a table row for this item
 				var row = Ti.UI.createTableViewRow(Uit.combine(style.tableViewRow,{
@@ -164,6 +185,10 @@ Ti.include('/windows/nieuws_detail.js');
 
 					// Now add the items to a tableView
 					displayNieuws(itemList);
+					if(Ti.Platform.osname==='android'){
+						navActInd.hide();
+					}
+					
 					Uit.ui.activityIndicator.hideModal();
 
 				} catch(e) {

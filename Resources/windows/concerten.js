@@ -51,6 +51,24 @@ Ti.include('/windows/concert_detail.js', '/windows/tickets.js', '/windows/zoeken
 			getData();
 		});
 		mainWin.rightNavButton = refreshButton;
+		
+		//MENU BUTTON ANDROID
+		var navActInd = Titanium.UI.createActivityIndicator({
+			message:' Loading...'
+		});
+		if(Ti.Platform.osname==='android'){
+			mainWin.activity.onCreateOptionsMenu = function(e) {
+		          var menu = e.menu;
+				  var menuItem1 = menu.add({ title: "Refresh" });
+				  menuItem1.setIcon("/img/btn_refresh_android.png");
+				  menuItem1.addEventListener("click", function(e) {
+					mainWin.add(navActInd);
+					navActInd.show();
+					url = 'http://build.uitdatabank.be/api/events/search?format=json&key=' + Uit.api_key + '&organiser=' + Uit.organizer;
+					getData();
+				  });
+	    	};
+	    }
 
 		//
 		// HTTP CLIENT GETCONCERTS
@@ -91,7 +109,6 @@ Ti.include('/windows/concert_detail.js', '/windows/tickets.js', '/windows/zoeken
 						}
 
 						var image = Titanium.UI.createImageView(Uit.combine(style.Img90, {
-							//backgroundImage : imgThumb,
 							image : imgThumb,
 							defaultImage : '/img/default_img.png'
 						}));
@@ -145,8 +162,9 @@ Ti.include('/windows/concert_detail.js', '/windows/tickets.js', '/windows/zoeken
 						}
 
 					});
-
-					navActInd.hide();
+					if(Ti.Platform.osname==='android'){
+						navActInd.hide();
+					}
 					Uit.ui.activityIndicator.hideModal();
 
 				} catch(e) {
@@ -157,16 +175,6 @@ Ti.include('/windows/concert_detail.js', '/windows/tickets.js', '/windows/zoeken
 			getReq.open("GET", url);
 			getReq.send();
 		};
-		if(Ti.Platform.osname === 'android') {
-			var bottomBar = Ti.UI.createView({
-				bottom : 0,
-				height : 40,
-				width : 320,
-				backgroundColor : '#D64027'
-			})
-			//mainWin.add(bottomBar);
-		}
-
 		return mainWin;
 	};
 })();

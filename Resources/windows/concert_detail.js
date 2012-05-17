@@ -49,10 +49,6 @@
 		detailWin.addEventListener('open', function(e) {
 			getData();
 
-			if(Ti.Platform.osname === 'iphone') {
-				
-			}
-
 			navActInd.show();
 		});
 		//HTTP CLIENT GETDATA
